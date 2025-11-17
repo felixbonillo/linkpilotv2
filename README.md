@@ -1,50 +1,149 @@
-# Welcome to your Expo app 👋
+# 🚀 LinkPilot Mobile — React Native + Expo  
+**Gestor de enlaces moderno, rápido y persistente.**  
+Guarda, organiza y comparte tus enlaces desde una interfaz limpia construida con una arquitectura modular.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+---
 
-## Get started
+## 🧠 Resumen del Proyecto
 
-1. Install dependencies
+**LinkPilot Mobile** es una aplicación creada con **React Native + Expo**, enfocada en demostrar buenas prácticas de arquitectura, gestión de estado global, navegación nativa y persistencia offline.
 
-   ```bash
-   npm install
-   ```
+Incluye:
 
-2. Start the app
+- Creación de enlaces (con título opcional)  
+- Abrir enlaces directamente en el navegador  
+- Compartir enlaces usando la API nativa (`Share`)  
+- Persistencia local con **AsyncStorage**  
+- Eliminación individual o general  
+- Pantalla de carga mientras se hidrata el estado  
+- Arquitectura profesional basada en módulos (“feature-based”)  
 
-   ```bash
-   npx expo start
-   ```
+Es un proyecto ideal para portafolios y entrevistas técnicas.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🏗️ Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Tecnología | Uso |
+|-----------|-----|
+| **Expo** | Entorno y build |
+| **React Native** | Desarrollo nativo |
+| **React Navigation (Native Stack)** | Navegación entre pantallas |
+| **Context API** | Estado global |
+| **AsyncStorage** | Persistencia local |
+| **react-native-safe-area-context** | Manejo de área segura |
+| **uuid (react-native-uuid)** | Generación de IDs |
+| **TypeScript (opcional)** | Tipado avanzado |
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 📂 Estructura del Proyecto
+
+linkpilot-mobile/
+App.tsx
+src/
+core/
+navigation/
+RootStack.tsx
+modules/
+links/
+components/
+LinkCard.tsx
+context/
+LinkContext.tsx
+screens/
+HomeScreen.tsx
+AddLinkScreen.tsx
+types/
+link.types.ts
+
+
+**Arquitectura modular por features**, fácil de escalar y mantener.
+
+---
+
+## ✨ Funcionalidades
+
+### 🔗 Gestión de enlaces
+- Guardar nuevos enlaces  
+- Título opcional  
+- Validación de URLs  
+- Fecha de creación  
+
+### 💾 Persistencia offline
+- Guardado automático en AsyncStorage  
+- Rehidratación al abrir la app  
+- Protección para evitar sobrescrituras mientras carga  
+
+### 📤 Compartir enlace (API nativa)
+- WhatsApp  
+- Telegram  
+- Email  
+- Apps instaladas  
+
+### 🗑️ Acciones rápidas
+- Borrar enlace individual  
+- Limpiar todos los enlaces  
+
+### 🎨 UI limpia y funcional
+- `LinkCard` reutilizable  
+- Componentes desacoplados  
+- Estilos consistentes  
+
+---
+
+## 🚦 Cómo correr el proyecto
+
+### 1. Instalación de dependencias
 
 ```bash
-npm run reset-project
-```
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+npx expo install @react-native-async-storage/async-storage
+npx expo install react-native-safe-area-context
+npm install react-native-uuid
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+npx expo start
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
+npx eas build --platform android
 
-Join our community of developers creating universal apps.
+🧠 Aprendizajes técnicos aplicados
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Arquitectura modular (feature-based)
+
+Context API con persistencia asincrónica
+
+Hidratar estado desde AsyncStorage (patrón offline-first básico)
+
+Navegación con NativeStackNavigator
+
+Uso de APIs nativas: Share, Linking
+
+Manejo de SafeAreaView y UI responsiva
+
+Optimización básica con useMemo
+
+🤝 Contribución
+
+Sugerencias, issues y PRs son bienvenidos.
+Posibles mejoras futuras:
+
+Almacenamiento con SQLite
+
+Sincronización remota (offline-first completo)
+
+Búsqueda global y filtros
+
+Carpetas / etiquetas por categoría
+
+📄 Licencia
+
+MIT License — libre para usar y modificar.
+
+👨‍💻 Autor
+
+Félix Bonillo
+Desarrollador React / React Native
+GitHub: https://github.com/felixbonillo
